@@ -1,66 +1,2306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Mera Pehla Web IDE Test</title>
-                <style>
-                        body {
-                                    font-family: Arial, sans-serif;
-                                                background: linear-gradient(135deg, #0d1117, #161b22);
-                                                            color: #c9d1d9;
-                                                                        display: flex;
-                                                                                    justify-content: center;
-                                                                                                align-items: center;
-                                                                                                            height: 100vh;
-                                                                                                                        margin: 0;
-                                                                                                                                    flex-direction: column;
-                                                                                                                                            }
-                                                                                                                                                    .card {
-                                                                                                                                                                background: #1c2333;
-                                                                                                                                                                            padding: 40px;
-                                                                                                                                                                                        border-radius: 16px;
-                                                                                                                                                                                                    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-                                                                                                                                                                                                                border: 1px solid #30363d;
-                                                                                                                                                                                                                            text-align: center;
-                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                            h1 {
-                                                                                                                                                                                                                                                        color: #58a6ff;
-                                                                                                                                                                                                                                                                    font-size: 2.5rem;
-                                                                                                                                                                                                                                                                                margin-bottom: 10px;
-                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                p {
-                                                                                                                                                                                                                                                                                                            color: #8b949e;
-                                                                                                                                                                                                                                                                                                                        font-size: 1.2rem;
-                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                        button {
-                                                                                                                                                                                                                                                                                                                                                    background: #238636;
-                                                                                                                                                                                                                                                                                                                                                                color: white;
-                                                                                                                                                                                                                                                                                                                                                                            border: none;
-                                                                                                                                                                                                                                                                                                                                                                                        padding: 12px 30px;
-                                                                                                                                                                                                                                                                                                                                                                                                    border-radius: 8px;
-                                                                                                                                                                                                                                                                                                                                                                                                                font-size: 1.1rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                            cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    transition: 0.2s;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    button:hover {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                background: #2ea043;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            transform: scale(1.05);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            .badge {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 0.9rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                color: #d29922;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </style>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </head>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="card">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h1>🚀 GitHub IDE Test</h1>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p>Yeh file <strong>direct tool</strong> se push hui hai!</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button onclick="alert('🎉 Button kaam kar raha hai!')">Click Me!</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="badge">✅ Successfully deployed via Web IDE</div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0d1117" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Ultimate GitHub IDE</title>
+
+    <!-- ===== PWA MANIFEST (Dynamic) ===== -->
+    <script>
+        (function() {
+            const manifest = {
+                name: "Ultimate GitHub IDE",
+                short_name: "GH IDE",
+                description: "All-in-one web-based code editor with AI",
+                start_url: location.href.split('?')[0],
+                display: "standalone",
+                background_color: "#0d1117",
+                theme_color: "#0d1117",
+                orientation: "any",
+                icons: [{
+                    src: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#0d1117"/><text x="50" y="68" font-size="64" text-anchor="middle" fill="#58a6ff" font-family="monospace">&lt;/&gt;</text></svg>'),
+                    sizes: "512x512",
+                    type: "image/svg+xml"
+                }]
+            };
+            const blob = new Blob([JSON.stringify(manifest)], { type: "application/json" });
+            const link = document.createElement("link");
+            link.rel = "manifest";
+            link.href = URL.createObjectURL(blob);
+            document.head.appendChild(link);
+        })();
+    </script>
+
+    <!-- ===== IMPORT MAP (Modern ES Modules) ===== -->
+    <script type="importmap">
+        {
+            "imports": {
+                "monaco-editor": "https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/+esm",
+                "xterm": "https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm",
+                "xterm-addon-fit": "https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/+esm",
+                "jszip": "https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm",
+                "prettier/standalone": "https://cdn.jsdelivr.net/npm/prettier@3.2.5/standalone.js",
+                "prettier/plugins/*": "https://cdn.jsdelivr.net/npm/prettier@3.2.5/plugins/*.js"
+            }
+        }
+    </script>
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #1c2333;
+            --bg-hover: #252d3f;
+            --bg-active: #2d374b;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --text-muted: #484f58;
+            --accent: #58a6ff;
+            --accent-hover: #79c0ff;
+            --green: #3fb950;
+            --red: #f85149;
+            --orange: #d29922;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            --radius: 6px;
+            --transition: 0.2s ease;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --mono: "JetBrains Mono", "Fira Code", monospace;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-primary: #ffffff;
+                --bg-secondary: #f6f8fa;
+                --bg-tertiary: #eaeef2;
+                --bg-hover: #d0d7de;
+                --bg-active: #bcc3cd;
+                --border-color: #d0d7de;
+                --text-primary: #24292f;
+                --text-secondary: #57606a;
+                --text-muted: #8b949e;
+                --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            }
+        }
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font);
+            font-size: 13px;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* ===== LAYOUT ===== */
+        #app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            height: 100dvh;
+        }
+
+        /* ===== HEADER ===== */
+        #header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            min-height: 44px;
+        }
+        #header .logo {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--accent);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        #header .logo span {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 12px;
+        }
+        #header .spacer {
+            flex: 1;
+            min-width: 4px;
+        }
+        #header input,
+        #header select,
+        #header button {
+            font-family: var(--font);
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            outline: none;
+            transition: border var(--transition), box-shadow var(--transition);
+            max-width: 180px;
+            height: 30px;
+        }
+        #header input:focus,
+        #header select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+        }
+        #header input[type="password"] {
+            max-width: 160px;
+            font-family: var(--mono);
+        }
+        #header button {
+            cursor: pointer;
+            background: var(--bg-tertiary);
+            border-color: var(--border-color);
+            font-weight: 500;
+            white-space: nowrap;
+            padding: 4px 12px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        #header button:hover {
+            background: var(--bg-hover);
+            border-color: var(--text-secondary);
+        }
+        #header button.primary {
+            background: var(--accent);
+            color: #0d1117;
+            border-color: var(--accent);
+        }
+        #header button.primary:hover {
+            background: var(--accent-hover);
+        }
+        #header button.danger {
+            color: var(--red);
+            border-color: var(--red);
+        }
+        #header button.danger:hover {
+            background: var(--red);
+            color: #fff;
+        }
+        #header button.success {
+            color: var(--green);
+            border-color: var(--green);
+        }
+        #header button.success:hover {
+            background: var(--green);
+            color: #fff;
+        }
+        #header .badge {
+            font-size: 11px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        #header .badge.online {
+            color: var(--green);
+        }
+        #header .badge.offline {
+            color: var(--text-muted);
+        }
+        .theme-toggle {
+            background: none !important;
+            border: none !important;
+            font-size: 18px;
+            padding: 0 4px !important;
+            cursor: pointer;
+            color: var(--text-secondary);
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-toggle:hover {
+            color: var(--text-primary) !important;
+            background: none !important;
+        }
+        #aiToggle {
+            background: none !important;
+            border: none !important;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 0 6px !important;
+            height: 30px;
+        }
+        #aiToggle:hover {
+            color: var(--accent) !important;
+        }
+
+        /* ===== TAB BAR ===== */
+        #tab-bar {
+            display: flex;
+            align-items: center;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+            height: 34px;
+            overflow-x: auto;
+            padding: 0 8px;
+            gap: 2px;
+        }
+        #tab-bar .tab {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            font-size: 12px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            height: 28px;
+            min-width: 40px;
+            max-width: 160px;
+            position: relative;
+            transition: background 0.15s;
+        }
+        #tab-bar .tab:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+        #tab-bar .tab.active {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+            border-bottom: 2px solid var(--accent);
+        }
+        #tab-bar .tab .close {
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        #tab-bar .tab .close:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+        #tab-bar .tab .dirty {
+            width: 8px;
+            height: 8px;
+            background: var(--text-secondary);
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* ===== MAIN BODY ===== */
+        #main {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ===== SIDEBAR ===== */
+        #sidebar {
+            width: 260px;
+            min-width: 180px;
+            max-width: 40vw;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            transition: width 0.2s;
+            overflow: hidden;
+        }
+        #sidebar.collapsed {
+            width: 0 !important;
+            min-width: 0 !important;
+            border-right: none;
+        }
+        #sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 10px;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            height: 30px;
+        }
+        #sidebar-header button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 0 4px;
+        }
+        #sidebar-header button:hover {
+            color: var(--text-primary);
+        }
+        #sidebar-search {
+            padding: 4px 8px;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+        #sidebar-search input {
+            width: 100%;
+            padding: 4px 8px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 12px;
+            outline: none;
+            height: 28px;
+        }
+        #sidebar-search input:focus {
+            border-color: var(--accent);
+        }
+        #file-tree {
+            flex: 1;
+            overflow-y: auto;
+            padding: 4px 0;
+            font-size: 12px;
+            font-family: var(--mono);
+        }
+        #file-tree .folder,
+        #file-tree .file {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 1px 4px;
+            transition: background 0.1s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            user-select: none;
+            min-height: 24px;
+        }
+        #file-tree .folder:hover,
+        #file-tree .file:hover {
+            background: var(--bg-hover);
+        }
+        #file-tree .file.active {
+            background: var(--bg-active);
+        }
+        #file-tree .icon {
+            font-size: 13px;
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        #file-tree .name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #file-tree .folder .name {
+            color: var(--text-secondary);
+        }
+        #file-tree .file .name {
+            color: var(--text-primary);
+        }
+        #file-tree .children {
+            padding-left: 16px;
+        }
+        #file-tree .empty {
+            padding: 20px 12px;
+            color: var(--text-muted);
+            font-size: 12px;
+            text-align: center;
+            font-family: var(--font);
+        }
+        #file-tree .highlight {
+            background: var(--bg-active) !important;
+        }
+
+        /* ===== EDITOR + PREVIEW SPLIT ===== */
+        #editor-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-primary);
+            overflow: hidden;
+            min-width: 0;
+        }
+        #editor-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 10px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            min-height: 32px;
+        }
+        #editor-toolbar .path {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-family: var(--mono);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 40px;
+        }
+        #editor-toolbar .actions {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        #editor-toolbar .actions button {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-family: var(--font);
+            transition: all 0.15s;
+            white-space: nowrap;
+            height: 26px;
+        }
+        #editor-toolbar .actions button:hover {
+            background: var(--bg-hover);
+        }
+        #editor-toolbar .actions button.primary {
+            background: var(--accent);
+            color: #0d1117;
+            border-color: var(--accent);
+        }
+        #editor-toolbar .actions button.primary:hover {
+            background: var(--accent-hover);
+        }
+        #editor-toolbar .actions button.danger {
+            color: var(--red);
+            border-color: var(--red);
+        }
+        #editor-toolbar .actions button.danger:hover {
+            background: var(--red);
+            color: #fff;
+        }
+        #editor-toolbar .actions button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        #split-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        #monaco-container {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+        }
+        #preview-container {
+            width: 45%;
+            min-width: 200px;
+            border-left: 1px solid var(--border-color);
+            background: #fff;
+            display: none;
+            flex-direction: column;
+        }
+        #preview-container.visible {
+            display: flex;
+        }
+        #preview-container iframe {
+            flex: 1;
+            border: none;
+            background: #fff;
+        }
+        #preview-header {
+            padding: 2px 10px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 11px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 28px;
+            flex-shrink: 0;
+        }
+        #preview-header button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* ===== TERMINAL / OUTPUT ===== */
+        #terminal-container {
+            height: 150px;
+            min-height: 60px;
+            max-height: 40vh;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            display: none;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+        #terminal-container.visible {
+            display: flex;
+        }
+        #terminal-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 10px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 11px;
+            color: var(--text-secondary);
+            height: 26px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        #terminal-header button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #terminal-body {
+            flex: 1;
+            overflow: hidden;
+            padding: 4px;
+            background: #0c0c0c;
+        }
+        #terminal-body .xterm {
+            height: 100%;
+        }
+        .xterm-viewport {
+            overflow-y: auto !important;
+        }
+
+        /* ===== AI SIDEBAR ===== */
+        #ai-sidebar {
+            width: 0;
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.25s ease;
+            flex-shrink: 0;
+        }
+        #ai-sidebar.open {
+            width: 340px;
+        }
+        #ai-sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            font-size: 13px;
+            flex-shrink: 0;
+            align-items: center;
+        }
+        #ai-sidebar-header button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 18px;
+        }
+        #ai-chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        #ai-chat .msg {
+            padding: 8px 12px;
+            border-radius: var(--radius);
+            max-width: 90%;
+            font-size: 13px;
+            line-height: 1.5;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        #ai-chat .msg.user {
+            background: var(--bg-tertiary);
+            align-self: flex-end;
+            border: 1px solid var(--border-color);
+        }
+        #ai-chat .msg.assistant {
+            background: var(--bg-hover);
+            align-self: flex-start;
+            border: 1px solid var(--border-color);
+        }
+        #ai-chat .msg .code-block {
+            background: var(--bg-primary);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-family: var(--mono);
+            font-size: 12px;
+            overflow-x: auto;
+            margin-top: 4px;
+            border: 1px solid var(--border-color);
+            white-space: pre-wrap;
+        }
+        #ai-input-area {
+            display: flex;
+            gap: 6px;
+            padding: 8px;
+            border-top: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+        #ai-input-area input {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 13px;
+            outline: none;
+        }
+        #ai-input-area input:focus {
+            border-color: var(--accent);
+        }
+        #ai-input-area button {
+            padding: 6px 14px;
+            border-radius: var(--radius);
+            border: none;
+            background: var(--accent);
+            color: #0d1117;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        #ai-input-area button:hover {
+            background: var(--accent-hover);
+        }
+        #ai-api-key {
+            padding: 4px 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        #ai-api-key input {
+            flex: 1;
+            min-width: 100px;
+            padding: 4px 8px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 12px;
+            outline: none;
+            height: 28px;
+        }
+        #ai-api-key select {
+            padding: 4px 8px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 12px;
+            height: 28px;
+        }
+        #ai-api-key button {
+            padding: 2px 12px;
+            border-radius: var(--radius);
+            border: none;
+            background: var(--green);
+            color: #0d1117;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12px;
+            height: 28px;
+        }
+
+        /* ===== COMMAND PALETTE ===== */
+        #cmd-palette {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.95);
+            width: 500px;
+            max-width: 90vw;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 9999;
+            display: none;
+            padding: 8px 0;
+            flex-direction: column;
+        }
+        #cmd-palette.open {
+            display: flex;
+            animation: fadeIn 0.15s ease;
+        }
+        #cmd-palette input {
+            padding: 10px 16px;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+            font-family: var(--font);
+        }
+        #cmd-palette input::placeholder {
+            color: var(--text-muted);
+        }
+        #cmd-results {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 4px 0;
+        }
+        #cmd-results .item {
+            padding: 6px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+        #cmd-results .item:hover,
+        #cmd-results .item.selected {
+            background: var(--bg-hover);
+        }
+        #cmd-results .item .hint {
+            color: var(--text-muted);
+            font-size: 11px;
+            margin-left: auto;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            display: none;
+        }
+        .overlay.open {
+            display: block;
+        }
+
+        /* ===== TOAST ===== */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-width: 380px;
+            width: 90%;
+            pointer-events: none;
+        }
+        .toast {
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            color: var(--text-primary);
+            font-size: 13px;
+            animation: slideIn 0.25s ease;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+        }
+        .toast.success {
+            border-left: 4px solid var(--green);
+        }
+        .toast.error {
+            border-left: 4px solid var(--red);
+        }
+        .toast.info {
+            border-left: 4px solid var(--accent);
+        }
+        .toast .close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0 4px;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 200px;
+                min-width: 140px;
+            }
+            #preview-container {
+                width: 100%;
+                min-width: 0;
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                height: 40%;
+            }
+            #split-container {
+                flex-direction: column;
+            }
+            #ai-sidebar.open {
+                width: 100%;
+                max-width: 100%;
+            }
+            #cmd-palette {
+                width: 95vw;
+                top: 10%;
+            }
+            #header input,
+            #header select {
+                max-width: 100px;
+                font-size: 11px;
+            }
+            #header input[type="password"] {
+                max-width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            #header .logo span {
+                display: none;
+            }
+            #tab-bar .tab {
+                font-size: 11px;
+                padding: 2px 6px;
+                max-width: 100px;
+            }
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--border-color);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== APP ===== -->
+    <div id="app">
+
+        <!-- ===== HEADER ===== -->
+        <header id="header">
+            <div class="logo">&#60;/&gt; <span>Ultimate IDE</span></div>
+            <div class="spacer"></div>
+            <input type="password" id="tokenInput" placeholder="GitHub Token" autocomplete="off" />
+            <button id="loginBtn" class="primary">Login</button>
+            <span class="badge offline" id="statusBadge">⚫ Offline</span>
+            <select id="repoSelect" disabled>
+                <option value="">-- Repo --</option>
+            </select>
+            <select id="branchSelect" disabled>
+                <option value="">-- Branch --</option>
+            </select>
+            <button id="refreshBtn" disabled title="Refresh">⟳</button>
+            <button id="newFileBtn" disabled title="New File">+</button>
+            <button id="buildApkBtn" disabled title="Build APK">⚡</button>
+            <button id="exportZipBtn" disabled title="Export ZIP">📦</button>
+            <button id="toggleTerminal" disabled title="Toggle Terminal">⌨️</button>
+            <button id="togglePreview" disabled title="Toggle Preview">👁️</button>
+            <button id="aiToggle" disabled title="AI Assistant">🤖</button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌓</button>
+        </header>
+
+        <!-- ===== TAB BAR ===== -->
+        <div id="tab-bar"></div>
+
+        <!-- ===== MAIN ===== -->
+        <div id="main">
+
+            <!-- ===== SIDEBAR ===== -->
+            <aside id="sidebar">
+                <div id="sidebar-header">
+                    <span>Explorer</span>
+                    <button id="toggleSidebar">❮</button>
+                </div>
+                <div id="sidebar-search">
+                    <input type="text" id="fileSearchInput" placeholder="Search files..." />
+                </div>
+                <div id="file-tree">
+                    <div class="empty">📂 Login to browse</div>
+                </div>
+            </aside>
+
+            <!-- ===== EDITOR AREA ===== -->
+            <div id="editor-area">
+                <div id="editor-toolbar">
+                    <span class="path" id="filePath">No file selected</span>
+                    <div class="actions">
+                        <button id="saveBtn" disabled>💾 Save</button>
+                        <button id="deleteBtn" class="danger" disabled>🗑️ Delete</button>
+                        <button id="formatBtn" disabled title="Format Code">✨ Format</button>
+                        <button id="explainBtn" disabled title="Explain Code">📖 Explain</button>
+                        <button id="fixBtn" disabled title="Fix with AI">🔧 Fix</button>
+                    </div>
+                </div>
+                <div id="split-container">
+                    <div id="monaco-container"></div>
+                    <div id="preview-container">
+                        <div id="preview-header">
+                            <span>Live Preview</span>
+                            <button id="closePreview">✕</button>
+                        </div>
+                        <iframe id="preview-frame" srcdoc="<html><body style='background:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;color:#888;'>Select an HTML file to preview</body></html>"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TERMINAL ===== -->
+            <div id="terminal-container">
+                <div id="terminal-header">
+                    <span>Terminal</span>
+                    <button id="closeTerminal">✕</button>
+                </div>
+                <div id="terminal-body"></div>
+            </div>
+
+            <!-- ===== AI SIDEBAR ===== -->
+            <div id="ai-sidebar">
+                <div id="ai-sidebar-header">
+                    <span>🤖 AI Assistant</span>
+                    <button id="closeAi">✕</button>
+                </div>
+                <div id="ai-api-key">
+                    <input type="password" id="aiKeyInput" placeholder="API Key (OpenAI/Gemini)" />
+                    <select id="aiProvider">
+                        <option value="openai">OpenAI</option>
+                        <option value="gemini">Gemini</option>
+                    </select>
+                    <button id="saveAiKey">Save</button>
+                </div>
+                <div id="ai-chat"></div>
+                <div id="ai-input-area">
+                    <input type="text" id="aiInput" placeholder="Ask AI about your code..." />
+                    <button id="aiSend">Send</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== COMMAND PALETTE ===== -->
+    <div class="overlay" id="cmdOverlay"></div>
+    <div id="cmd-palette">
+        <input type="text" id="cmdInput" placeholder="Type a command... (e.g. 'new file', 'format', 'export')" autofocus />
+        <div id="cmd-results"></div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast-container"></div>
+
+    <!-- ================================================================ -->
+    <!-- ===== MAIN SCRIPT (ES Module) ===== -->
+    <!-- ================================================================ -->
+    <script type="module">
+        // ============================================================
+        // IMPORTS
+        // ============================================================
+        import * as monaco from 'monaco-editor';
+        import { Terminal } from 'xterm';
+        import { FitAddon } from 'xterm-addon-fit';
+        import JSZip from 'jszip';
+        import prettier from 'prettier/standalone';
+        import parserBabel from 'prettier/plugins/estree';
+        import parserHtml from 'prettier/plugins/html';
+        import parserCss from 'prettier/plugins/postcss';
+        import parserMarkdown from 'prettier/plugins/markdown';
+
+        // ============================================================
+        // STATE
+        // ============================================================
+        const state = {
+            token: localStorage.getItem('gh_token') || '',
+            user: null,
+            repos: [],
+            currentRepo: null,
+            currentRepoName: '',
+            currentBranch: 'main',
+            branches: [],
+            fileTree: [],
+            flatFiles: [],
+            tabs: [], // { id, path, content, sha, language, dirty }
+            activeTabId: null,
+            editor: null,
+            editorModel: null,
+            isLoggedIn: false,
+            isLoading: false,
+            terminal: null,
+            terminalFit: null,
+            aiKey: localStorage.getItem('ai_key') || '',
+            aiProvider: localStorage.getItem('ai_provider') || 'openai',
+            previewVisible: false,
+            terminalVisible: false,
+            aiSidebarVisible: false,
+        };
+
+        // ============================================================
+        // DOM REFS
+        // ============================================================
+        const $ = id => document.getElementById(id);
+        const tokenInput = $('tokenInput');
+        const loginBtn = $('loginBtn');
+        const statusBadge = $('statusBadge');
+        const repoSelect = $('repoSelect');
+        const branchSelect = $('branchSelect');
+        const refreshBtn = $('refreshBtn');
+        const newFileBtn = $('newFileBtn');
+        const buildApkBtn = $('buildApkBtn');
+        const exportZipBtn = $('exportZipBtn');
+        const toggleTerminal = $('toggleTerminal');
+        const togglePreview = $('togglePreview');
+        const aiToggle = $('aiToggle');
+        const themeToggle = $('themeToggle');
+        const tabBar = $('tab-bar');
+        const fileTree = $('file-tree');
+        const fileSearchInput = $('fileSearchInput');
+        const filePath = $('filePath');
+        const saveBtn = $('saveBtn');
+        const deleteBtn = $('deleteBtn');
+        const formatBtn = $('formatBtn');
+        const explainBtn = $('explainBtn');
+        const fixBtn = $('fixBtn');
+        const monacoContainer = $('monaco-container');
+        const previewContainer = $('preview-container');
+        const previewFrame = $('preview-frame');
+        const closePreview = $('closePreview');
+        const terminalContainer = $('terminal-container');
+        const terminalBody = $('terminal-body');
+        const closeTerminal = $('closeTerminal');
+        const aiSidebar = $('ai-sidebar');
+        const closeAi = $('closeAi');
+        const aiChat = $('ai-chat');
+        const aiInput = $('aiInput');
+        const aiSend = $('aiSend');
+        const aiKeyInput = $('aiKeyInput');
+        const aiProvider = $('aiProvider');
+        const saveAiKey = $('saveAiKey');
+        const cmdPalette = $('cmd-palette');
+        const cmdInput = $('cmdInput');
+        const cmdResults = $('cmd-results');
+        const cmdOverlay = $('cmdOverlay');
+        const toastContainer = $('toast-container');
+        const toggleSidebar = $('toggleSidebar');
+        const sidebar = $('sidebar');
+
+        // ============================================================
+        // TOAST SYSTEM
+        // ============================================================
+        function toast(msg, type = 'info', duration = 3500) {
+            const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+            const el = document.createElement('div');
+            el.className = `toast ${type}`;
+            el.innerHTML =
+                `<span>${icons[type]||'ℹ️'}</span><span style="flex:1">${msg}</span><button class="close">&times;</button>`;
+            el.querySelector('.close').addEventListener('click', () => el.remove());
+            toastContainer.appendChild(el);
+            setTimeout(() => { if (el.parentNode) el.remove(); }, duration);
+            return el;
+        }
+
+        // ============================================================
+        // GITHUB API HELPERS
+        // ============================================================
+        function ghFetch(url, opts = {}) {
+            const headers = {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': `Bearer ${state.token}`,
+                'X-GitHub-Api-Version': '2022-11-28',
+                ...(opts.headers || {}),
+            };
+            if (opts.body && typeof opts.body === 'object' && !(opts.body instanceof FormData)) {
+                headers['Content-Type'] = 'application/json';
+                opts.body = JSON.stringify(opts.body);
+            }
+            return fetch(url, { ...opts, headers });
+        }
+
+        async function ghGet(url) {
+            const r = await ghFetch(url);
+            if (!r.ok) throw new Error(`GitHub API ${r.status}: ${await r.text().catch(()=>'')}`);
+            return r.json();
+        }
+
+        async function ghPut(url, body) {
+            const r = await ghFetch(url, { method: 'PUT', body });
+            if (!r.ok) throw new Error(`GitHub API ${r.status}: ${await r.text().catch(()=>'')}`);
+            return r.json();
+        }
+
+        async function ghDelete(url) {
+            const r = await ghFetch(url, { method: 'DELETE' });
+            if (!r.ok) throw new Error(`GitHub API ${r.status}: ${await r.text().catch(()=>'')}`);
+            return r.json();
+        }
+
+        async function ghPost(url, body) {
+            const r = await ghFetch(url, { method: 'POST', body });
+            if (!r.ok) throw new Error(`GitHub API ${r.status}: ${await r.text().catch(()=>'')}`);
+            return r.json();
+        }
+
+        // ============================================================
+        // LOGIN
+        // ============================================================
+        async function login() {
+            const token = tokenInput.value.trim();
+            if (!token) { toast('Enter GitHub token', 'error'); return; }
+            state.token = token;
+            localStorage.setItem('gh_token', token);
+            try {
+                statusBadge.textContent = '⏳ Connecting...';
+                statusBadge.className = 'badge';
+                const user = await ghGet('https://api.github.com/user');
+                state.user = user;
+                const repos = await ghGet('https://api.github.com/user/repos?per_page=100&sort=updated');
+                state.repos = repos;
+                state.isLoggedIn = true;
+                statusBadge.textContent = '✅ Online';
+                statusBadge.className = 'badge online';
+                repoSelect.innerHTML = '<option value="">-- Select Repo --</option>';
+                repos.forEach(r => {
+                    const opt = document.createElement('option');
+                    opt.value = r.full_name;
+                    opt.textContent = r.full_name;
+                    repoSelect.appendChild(opt);
+                });
+                repoSelect.disabled = false;
+                refreshBtn.disabled = false;
+                newFileBtn.disabled = false;
+                buildApkBtn.disabled = false;
+                exportZipBtn.disabled = false;
+                toggleTerminal.disabled = false;
+                togglePreview.disabled = false;
+                aiToggle.disabled = false;
+                aiKeyInput.value = state.aiKey;
+                aiProvider.value = state.aiProvider;
+                toast(`Welcome ${user.login}!`, 'success');
+                if (repos.length > 0) {
+                    repoSelect.value = repos[0].full_name;
+                    await loadRepo(repos[0].full_name);
+                } else {
+                    fileTree.innerHTML = '<div class="empty">📭 No repos found</div>';
+                }
+            } catch (err) {
+                statusBadge.textContent = '❌ Error';
+                statusBadge.className = 'badge';
+                toast('Login failed: ' + err.message, 'error');
+                console.error(err);
+            }
+        }
+
+        // ============================================================
+        // LOAD REPO
+        // ============================================================
+        async function loadRepo(fullName) {
+            if (!fullName || state.isLoading) return;
+            state.isLoading = true;
+            try {
+                const [owner, repo] = fullName.split('/');
+                state.currentRepo = fullName;
+                state.currentRepoName = repo;
+                const repoInfo = await ghGet(`https://api.github.com/repos/${fullName}`);
+                state.currentBranch = repoInfo.default_branch || 'main';
+                // Load branches
+                const branches = await ghGet(`https://api.github.com/repos/${fullName}/branches`);
+                state.branches = branches.map(b => b.name);
+                branchSelect.innerHTML = '<option value="">-- Branch --</option>';
+                state.branches.forEach(b => {
+                    const opt = document.createElement('option');
+                    opt.value = b;
+                    opt.textContent = b;
+                    if (b === state.currentBranch) opt.selected = true;
+                    branchSelect.appendChild(opt);
+                });
+                branchSelect.disabled = false;
+                await loadFileTree(owner, repo, state.currentBranch);
+                // Clear tabs
+                state.tabs = [];
+                state.activeTabId = null;
+                renderTabs();
+                if (state.editor) {
+                    state.editor.setValue('// Select a file from explorer');
+                    state.editor.updateOptions({ readOnly: false });
+                }
+                filePath.textContent = `${fullName} / (select file)`;
+                saveBtn.disabled = true;
+                deleteBtn.disabled = true;
+                formatBtn.disabled = true;
+                explainBtn.disabled = true;
+                fixBtn.disabled = true;
+                toast(`Loaded ${fullName} (${state.currentBranch})`, 'success');
+                updatePreview();
+            } catch (err) {
+                toast('Load repo failed: ' + err.message, 'error');
+                console.error(err);
+            } finally {
+                state.isLoading = false;
+            }
+        }
+
+        // ============================================================
+        // LOAD FILE TREE
+        // ============================================================
+        async function loadFileTree(owner, repo, branch) {
+            try {
+                const refData = await ghGet(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${branch}`);
+                const treeSha = refData.object.sha;
+                const treeData = await ghGet(
+                    `https://api.github.com/repos/${owner}/${repo}/git/trees/${treeSha}?recursive=1`
+                );
+                const tree = [];
+                const folders = new Set();
+                const flat = [];
+                treeData.tree.forEach(item => {
+                    const parts = item.path.split('/');
+                    const name = parts[parts.length - 1];
+                    const isFile = item.type === 'blob';
+                    if (parts.length > 1) {
+                        let current = '';
+                        for (let i = 0; i < parts.length - 1; i++) {
+                            current += (current ? '/' : '') + parts[i];
+                            folders.add(current);
+                        }
+                    }
+                    const entry = { name, path: item.path, isFile, sha: item.sha, size: item.size || 0 };
+                    tree.push(entry);
+                    if (isFile) flat.push(entry);
+                });
+                state.fileTree = tree;
+                state.flatFiles = flat;
+                renderFileTree(tree, folders);
+            } catch (err) {
+                fileTree.innerHTML = `<div class="empty">⚠️ ${err.message}</div>`;
+            }
+        }
+
+        // ============================================================
+        // RENDER FILE TREE
+        // ============================================================
+        function renderFileTree(tree, folders) {
+            if (!tree || tree.length === 0) {
+                fileTree.innerHTML = '<div class="empty">📂 No files</div>';
+                return;
+            }
+            const root = {};
+            tree.forEach(item => {
+                const parts = item.path.split('/');
+                let current = root;
+                for (let i = 0; i < parts.length; i++) {
+                    const part = parts[i];
+                    const isLast = i === parts.length - 1;
+                    if (!current[part]) current[part] = {};
+                    if (isLast) current[part]._item = item;
+                    current = current[part];
+                }
+            });
+
+            function renderNode(node, prefix = '') {
+                let html = '';
+                const keys = Object.keys(node).filter(k => k !== '_item').sort();
+                for (const key of keys) {
+                    const child = node[key];
+                    const item = child._item || null;
+                    const isFolder = !item;
+                    const fullPath = prefix ? `${prefix}/${key}` : key;
+                    if (isFolder) {
+                        html += `<div class="folder" data-path="${fullPath}">`;
+                        html += `<span class="icon">📁</span><span class="name">${key}</span>`;
+                        html += `</div><div class="children">${renderNode(child, fullPath)}</div>`;
+                    } else if (item) {
+                        const icon = getFileIcon(item.name);
+                        const active = item.path === state.activeTabId ? ' active' : '';
+                        html += `<div class="file${active}" data-path="${item.path}" data-sha="${item.sha}">`;
+                        html += `<span class="icon">${icon}</span><span class="name">${item.name}</span>`;
+                        html += `</div>`;
+                    }
+                }
+                return html;
+            }
+            fileTree.innerHTML = renderNode(root);
+
+            // Click handlers
+            fileTree.querySelectorAll('.file').forEach(el => {
+                el.addEventListener('click', () => {
+                    const path = el.dataset.path;
+                    const sha = el.dataset.sha;
+                    openFile(path, sha);
+                });
+                el.addEventListener('dblclick', () => {
+                    const path = el.dataset.path;
+                    const sha = el.dataset.sha;
+                    openFile(path, sha);
+                });
+            });
+            fileTree.querySelectorAll('.folder').forEach(el => {
+                el.addEventListener('click', () => {
+                    const children = el.nextElementSibling;
+                    if (children && children.classList.contains('children')) {
+                        const disp = children.style.display;
+                        children.style.display = disp === 'none' ? '' : 'none';
+                        el.querySelector('.icon').textContent = disp === 'none' ? '📁' : '📂';
+                    }
+                });
+            });
+
+            // Search filter
+            fileSearchInput.addEventListener('input', () => {
+                const q = fileSearchInput.value.toLowerCase();
+                fileTree.querySelectorAll('.file').forEach(el => {
+                    const name = el.querySelector('.name')?.textContent?.toLowerCase() || '';
+                    el.style.display = name.includes(q) ? '' : 'none';
+                });
+                fileTree.querySelectorAll('.folder').forEach(el => {
+                    const children = el.nextElementSibling;
+                    if (children) {
+                        const visible = children.querySelector('.file[style*="display: none"]') ? false : true;
+                        el.style.display = (q === '' || visible) ? '' : 'none';
+                    }
+                });
+            });
+        }
+
+        function getFileIcon(name) {
+            const ext = name.split('.').pop().toLowerCase();
+            const map = {
+                'js': '📜',
+                'ts': '📘',
+                'jsx': '⚛️',
+                'tsx': '⚛️',
+                'html': '🌐',
+                'css': '🎨',
+                'json': '📋',
+                'md': '📝',
+                'py': '🐍',
+                'java': '☕',
+                'go': '🐹',
+                'rs': '🦀',
+                'c': '⚙️',
+                'cpp': '⚙️',
+                'sh': '💻',
+                'yml': '⚙️',
+                'yaml': '⚙️',
+                'xml': '📄',
+                'svg': '🖼️',
+                'png': '🖼️',
+                'jpg': '🖼️',
+                'gif': '🖼️',
+                'webp': '🖼️',
+                'ico': '🖼️',
+                'ttf': '🔤',
+                'woff': '🔤',
+                'gitignore': '🙈',
+                'env': '🔐',
+                'dockerfile': '🐳',
+                'makefile': '🔧',
+                'toml': '⚙️',
+                'lock': '🔒',
+            };
+            return map[ext] || '📄';
+        }
+
+        // ============================================================
+        // OPEN FILE (Multi-tab)
+        // ============================================================
+        async function openFile(path, sha) {
+            if (!state.currentRepo || !path) return;
+            if (state.isLoading) return;
+
+            // Check if already open in tabs
+            const existing = state.tabs.find(t => t.path === path);
+            if (existing) {
+                state.activeTabId = path;
+                renderTabs();
+                showEditorContent(path);
+                return;
+            }
+
+            state.isLoading = true;
+            try {
+                const [owner, repo] = state.currentRepo.split('/');
+                const data = await ghGet(
+                    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${state.currentBranch}`
+                );
+                let content = '';
+                if (data.encoding === 'base64') content = atob(data.content);
+                else content = data.content || '';
+                const lang = getLangFromPath(path);
+                const tab = {
+                    id: path,
+                    path,
+                    content,
+                    sha: data.sha,
+                    language: lang,
+                    dirty: false,
+                };
+                state.tabs.push(tab);
+                state.activeTabId = path;
+                renderTabs();
+                showEditorContent(path);
+                saveBtn.disabled = false;
+                deleteBtn.disabled = false;
+                formatBtn.disabled = false;
+                explainBtn.disabled = false;
+                fixBtn.disabled = false;
+                // Update tree active
+                fileTree.querySelectorAll('.file').forEach(el => {
+                    el.classList.toggle('active', el.dataset.path === path);
+                });
+            } catch (err) {
+                toast('Open failed: ' + err.message, 'error');
+            } finally {
+                state.isLoading = false;
+            }
+        }
+
+        function getLangFromPath(path) {
+            const ext = path.split('.').pop().toLowerCase();
+            const map = {
+                'js': 'javascript',
+                'ts': 'typescript',
+                'jsx': 'javascript',
+                'tsx': 'typescript',
+                'html': 'html',
+                'css': 'css',
+                'scss': 'scss',
+                'json': 'json',
+                'md': 'markdown',
+                'py': 'python',
+                'java': 'java',
+                'go': 'go',
+                'rs': 'rust',
+                'c': 'c',
+                'cpp': 'cpp',
+                'h': 'cpp',
+                'sh': 'shell',
+                'yml': 'yaml',
+                'yaml': 'yaml',
+                'xml': 'xml',
+                'toml': 'toml',
+                'dockerfile': 'dockerfile',
+                'gitignore': 'plaintext',
+                'env': 'plaintext',
+            };
+            return map[ext] || 'plaintext';
+        }
+
+        function showEditorContent(path) {
+            const tab = state.tabs.find(t => t.id === path);
+            if (!tab) return;
+            if (state.editor) {
+                state.editor.setValue(tab.content);
+                const lang = tab.language || getLangFromPath(path);
+                monaco.editor.setModelLanguage(state.editor.getModel(), lang);
+                state.editor.updateOptions({ readOnly: false });
+                // Mark as dirty if needed
+                state.editor.getModel().onDidChangeContent(() => {
+                    const current = state.editor.getValue();
+                    if (current !== tab.content) {
+                        tab.dirty = true;
+                        renderTabs();
+                        updatePreview();
+                    } else {
+                        tab.dirty = false;
+                        renderTabs();
+                    }
+                });
+            }
+            filePath.textContent = `${state.currentRepo} / ${path}`;
+            // Update active tab
+            renderTabs();
+        }
+
+        // ============================================================
+        // RENDER TABS
+        // ============================================================
+        function renderTabs() {
+            tabBar.innerHTML = '';
+            state.tabs.forEach(tab => {
+                const el = document.createElement('div');
+                el.className = `tab ${tab.id === state.activeTabId ? 'active' : ''}`;
+                el.innerHTML = `
+              <span>${tab.path.split('/').pop()}</span>
+              ${tab.dirty ? '<span class="dirty"></span>' : ''}
+              <span class="close" data-path="${tab.path}">✕</span>
+            `;
+                el.addEventListener('click', (e) => {
+                    if (e.target.closest('.close')) return;
+                    state.activeTabId = tab.id;
+                    renderTabs();
+                    showEditorContent(tab.id);
+                });
+                el.querySelector('.close').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeTab(tab.id);
+                });
+                tabBar.appendChild(el);
+            });
+            if (state.tabs.length === 0) {
+                const empty = document.createElement('span');
+                empty.style.cssText = 'color:var(--text-muted);font-size:12px;padding:4px 8px;';
+                empty.textContent = 'No files open';
+                tabBar.appendChild(empty);
+            }
+        }
+
+        function closeTab(path) {
+            const idx = state.tabs.findIndex(t => t.id === path);
+            if (idx === -1) return;
+            const tab = state.tabs[idx];
+            if (tab.dirty) {
+                if (!confirm(`File "${tab.path}" has unsaved changes. Close anyway?`)) return;
+            }
+            state.tabs.splice(idx, 1);
+            if (state.activeTabId === path) {
+                state.activeTabId = state.tabs.length > 0 ? state.tabs[0].id : null;
+            }
+            renderTabs();
+            if (state.activeTabId) {
+                showEditorContent(state.activeTabId);
+            } else {
+                if (state.editor) state.editor.setValue('// No file open');
+                filePath.textContent = `${state.currentRepo} / (no file)`;
+                saveBtn.disabled = true;
+                deleteBtn.disabled = true;
+                formatBtn.disabled = true;
+                explainBtn.disabled = true;
+                fixBtn.disabled = true;
+            }
+            updatePreview();
+        }
+
+        // ============================================================
+        // SAVE FILE
+        // ============================================================
+        async function saveFile() {
+            if (!state.activeTabId) { toast('No active file', 'error'); return; }
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab) return;
+            if (!state.editor) return;
+            const content = state.editor.getValue();
+            const [owner, repo] = state.currentRepo.split('/');
+            try {
+                const body = {
+                    message: `Update ${tab.path}`,
+                    content: btoa(unescape(encodeURIComponent(content))),
+                    branch: state.currentBranch,
+                };
+                if (tab.sha) body.sha = tab.sha;
+                const result = await ghPut(
+                    `https://api.github.com/repos/${owner}/${repo}/contents/${tab.path}`,
+                    body
+                );
+                tab.sha = result.content.sha;
+                tab.content = content;
+                tab.dirty = false;
+                renderTabs();
+                toast('File saved! ✅', 'success');
+                await loadRepo(state.currentRepo);
+                // Reopen the tab to refresh tree
+                const active = state.activeTabId;
+                state.tabs = state.tabs.filter(t => t.id === active);
+                state.activeTabId = active;
+                renderTabs();
+                showEditorContent(active);
+            } catch (err) {
+                toast('Save failed: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // DELETE FILE
+        // ============================================================
+        async function deleteFile() {
+            if (!state.activeTabId) { toast('No active file', 'error'); return; }
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab) return;
+            if (!confirm(`Delete "${tab.path}" permanently?`)) return;
+            const [owner, repo] = state.currentRepo.split('/');
+            try {
+                await ghDelete(
+                    `https://api.github.com/repos/${owner}/${repo}/contents/${tab.path}?sha=${tab.sha}&branch=${state.currentBranch}&message=Delete%20${tab.path}`
+                );
+                toast('File deleted 🗑️', 'success');
+                closeTab(tab.id);
+                await loadRepo(state.currentRepo);
+            } catch (err) {
+                toast('Delete failed: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // FORMAT CODE (Prettier)
+        // ============================================================
+        async function formatCode() {
+            if (!state.activeTabId) { toast('No active file', 'error'); return; }
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab || !state.editor) return;
+            const code = state.editor.getValue();
+            const ext = tab.path.split('.').pop();
+            let plugins = [parserBabel];
+            let parser = 'babel';
+            if (ext === 'html') { plugins.push(parserHtml);
+                parser = 'html'; } else if (ext === 'css' || ext === 'scss') { plugins.push(parserCss);
+                parser = 'css'; } else if (ext === 'md') { plugins.push(parserMarkdown);
+                parser = 'markdown'; } else if (ext === 'json') { parser = 'json'; }
+            try {
+                const formatted = await prettier.format(code, { parser, plugins, tabWidth: 2, useTabs: false });
+                state.editor.setValue(formatted);
+                tab.content = formatted;
+                tab.dirty = true;
+                renderTabs();
+                toast('Code formatted ✨', 'success');
+            } catch (err) {
+                toast('Format error: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // PREVIEW
+        // ============================================================
+        function updatePreview() {
+            if (!state.activeTabId) { previewFrame.srcdoc =
+                '<html><body style="background:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;color:#888;">Select a file to preview</body></html>';
+                return; }
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab) return;
+            const ext = tab.path.split('.').pop().toLowerCase();
+            if (ext === 'html') {
+                const content = state.editor ? state.editor.getValue() : tab.content;
+                previewFrame.srcdoc = content;
+            } else if (ext === 'css' || ext === 'js') {
+                // For CSS/JS, show a simple message
+                previewFrame.srcdoc =
+                    `<html><body style="background:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;color:#888;">Preview for ${ext.toUpperCase()} files is not supported directly. Open an HTML file.</body></html>`;
+            } else {
+                previewFrame.srcdoc =
+                    `<html><body style="background:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;color:#888;">No preview available for this file type.</body></html>`;
+            }
+        }
+
+        function togglePreviewVisibility() {
+            state.previewVisible = !state.previewVisible;
+            previewContainer.classList.toggle('visible', state.previewVisible);
+            togglePreview.textContent = state.previewVisible ? '👁️' : '👁️';
+            if (state.previewVisible) updatePreview();
+            setTimeout(() => { if (state.editor) state.editor.layout(); }, 200);
+        }
+
+        // ============================================================
+        // TERMINAL (xterm.js)
+        // ============================================================
+        function initTerminal() {
+            if (state.terminal) return;
+            const term = new Terminal({ cursorBlink: true, theme: { background: '#0c0c0c', foreground: '#f0f0f0' } });
+            const fitAddon = new FitAddon();
+            term.loadAddon(fitAddon);
+            term.open(terminalBody);
+            state.terminal = term;
+            state.terminalFit = fitAddon;
+            term.write('Welcome to Ultimate IDE Terminal\r\n$ ');
+            term.onKey((e) => {
+                const char = e.key;
+                if (char === '\r') {
+                    term.write('\r\n$ ');
+                } else if (char === '\x7f') {
+                    // backspace
+                } else {
+                    term.write(char);
+                }
+            });
+            setTimeout(() => fitAddon.fit(), 100);
+        }
+
+        function toggleTerminalVisibility() {
+            state.terminalVisible = !state.terminalVisible;
+            terminalContainer.classList.toggle('visible', state.terminalVisible);
+            toggleTerminal.textContent = state.terminalVisible ? '⌨️' : '⌨️';
+            if (state.terminalVisible) {
+                if (!state.terminal) initTerminal();
+                setTimeout(() => { if (state.terminalFit) state.terminalFit.fit(); }, 100);
+            }
+            setTimeout(() => { if (state.editor) state.editor.layout(); }, 200);
+        }
+
+        // ============================================================
+        // AI FEATURES (OpenAI / Gemini)
+        // ============================================================
+        async function callAI(prompt, system = 'You are a helpful coding assistant.') {
+            const key = state.aiKey;
+            if (!key) { toast('Please set your API key in AI sidebar', 'error'); return null; }
+            const provider = state.aiProvider;
+            try {
+                let url, body;
+                if (provider === 'openai') {
+                    url = 'https://api.openai.com/v1/chat/completions';
+                    body = {
+                        model: 'gpt-3.5-turbo',
+                        messages: [{ role: 'system', content: system }, { role: 'user', content: prompt }],
+                        temperature: 0.7,
+                    };
+                } else if (provider === 'gemini') {
+                    url =
+                        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${key}`;
+                    body = { contents: [{ parts: [{ text: system + '\n\n' + prompt }] }] };
+                } else {
+                    throw new Error('Unknown provider');
+                }
+                const resp = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': provider === 'openai' ? `Bearer ${key}` : undefined,
+                    },
+                    body: JSON.stringify(body),
+                });
+                if (!resp.ok) throw new Error(`API error ${resp.status}: ${await resp.text()}`);
+                const data = await resp.json();
+                if (provider === 'openai') {
+                    return data.choices[0].message.content;
+                } else if (provider === 'gemini') {
+                    return data.candidates[0].content.parts[0].text;
+                }
+                return null;
+            } catch (err) {
+                toast('AI error: ' + err.message, 'error');
+                return null;
+            }
+        }
+
+        async function sendAIMessage() {
+            const msg = aiInput.value.trim();
+            if (!msg) return;
+            if (!state.aiKey) { toast('Set API key first', 'error'); return; }
+            const activeTab = state.tabs.find(t => t.id === state.activeTabId);
+            const codeContext = activeTab ? `Current file (${activeTab.path}):\n${state.editor ? state.editor.getValue() : ''}` :
+                'No file open.';
+            const fullPrompt = `User asked: "${msg}"\n\nCode context:\n${codeContext}`;
+            addAIMessage(msg, 'user');
+            aiInput.value = '';
+            aiInput.disabled = true;
+            aiSend.disabled = true;
+            const response = await callAI(fullPrompt);
+            aiInput.disabled = false;
+            aiSend.disabled = false;
+            if (response) {
+                addAIMessage(response, 'assistant');
+            } else {
+                addAIMessage('Sorry, I could not process that. Check your API key or connection.', 'assistant');
+            }
+        }
+
+        function addAIMessage(text, role) {
+            const div = document.createElement('div');
+            div.className = `msg ${role}`;
+            // Format code blocks
+            const parts = text.split(/(```[\s\S]*?```)/g);
+            let html = '';
+            for (const part of parts) {
+                if (part.startsWith('```')) {
+                    const code = part.replace(/```\w*\n?/g, '').replace(/```$/, '');
+                    html += `<div class="code-block">${code}</div>`;
+                } else {
+                    html += part.replace(/\n/g, '<br>');
+                }
+            }
+            div.innerHTML = html;
+            aiChat.appendChild(div);
+            aiChat.scrollTop = aiChat.scrollHeight;
+        }
+
+        function toggleAiSidebar() {
+            state.aiSidebarVisible = !state.aiSidebarVisible;
+            aiSidebar.classList.toggle('open', state.aiSidebarVisible);
+            aiToggle.textContent = state.aiSidebarVisible ? '🤖' : '🤖';
+            if (state.aiSidebarVisible) {
+                if (!state.aiKey) {
+                    addAIMessage('👋 Hello! To use AI, enter your OpenAI or Gemini API key in the field above and click Save.',
+                        'assistant');
+                } else {
+                    addAIMessage('👋 AI is ready! Ask me anything about your code.', 'assistant');
+                }
+            }
+        }
+
+        // ============================================================
+        // EXPORT ZIP
+        // ============================================================
+        async function exportZip() {
+            if (!state.currentRepo) { toast('Select a repo first', 'error'); return; }
+            const zip = new JSZip();
+            const [owner, repo] = state.currentRepo.split('/');
+            try {
+                toast('Fetching files for ZIP...', 'info');
+                const treeData = await ghGet(
+                    `https://api.github.com/repos/${owner}/${repo}/git/trees/${state.currentBranch}?recursive=1`
+                );
+                const files = treeData.tree.filter(item => item.type === 'blob');
+                let count = 0;
+                for (const item of files) {
+                    try {
+                        const data = await ghGet(
+                            `https://api.github.com/repos/${owner}/${repo}/contents/${item.path}?ref=${state.currentBranch}`
+                        );
+                        const content = atob(data.content);
+                        zip.file(item.path, content);
+                        count++;
+                    } catch (e) { /* skip */ }
+                }
+                const blob = await zip.generateAsync({ type: 'blob' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${repo}-export.zip`;
+                a.click();
+                URL.revokeObjectURL(url);
+                toast(`Exported ${count} files as ZIP 📦`, 'success');
+            } catch (err) {
+                toast('Export failed: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // BUILD APK (Trigger GitHub Actions)
+        // ============================================================
+        async function buildApk() {
+            if (!state.currentRepo) { toast('Select a repo', 'error'); return; }
+            const [owner, repo] = state.currentRepo.split('/');
+            try {
+                const workflows = await ghGet(
+                    `https://api.github.com/repos/${owner}/${repo}/actions/workflows`
+                );
+                const dispatchable = workflows.workflows.filter(w => w.state === 'active');
+                if (dispatchable.length === 0) {
+                    toast('No workflow_dispatch workflows found. Create .github/workflows/*.yml', 'error');
+                    return;
+                }
+                let workflowId = dispatchable[0].id;
+                if (dispatchable.length > 1) {
+                    const names = dispatchable.map((w, i) => `${i+1}. ${w.name}`).join('\n');
+                    const choice = prompt(`Select workflow:\n${names}`);
+                    if (!choice) return;
+                    const idx = parseInt(choice) - 1;
+                    if (idx < 0 || idx >= dispatchable.length) { toast('Invalid', 'error'); return; }
+                    workflowId = dispatchable[idx].id;
+                }
+                await ghPost(
+                    `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
+                        ref: state.currentBranch,
+                        inputs: {}
+                    }
+                );
+                toast('Build triggered! Check Actions tab ⚡', 'success');
+            } catch (err) {
+                toast('Build failed: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // NEW FILE
+        // ============================================================
+        async function newFile() {
+            if (!state.currentRepo) { toast('Select a repo', 'error'); return; }
+            const path = prompt('Enter file path (e.g. src/app.js):');
+            if (!path) return;
+            const [owner, repo] = state.currentRepo.split('/');
+            try {
+                await ghGet(
+                    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${state.currentBranch}`
+                );
+                toast('File exists! Open it.', 'error');
+                return;
+            } catch (e) { /* good, doesn't exist */ }
+            try {
+                const body = {
+                    message: `Create ${path}`,
+                    content: btoa(`// New file: ${path}`),
+                    branch: state.currentBranch,
+                };
+                const result = await ghPut(
+                    `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+                    body
+                );
+                toast('File created! 🎉', 'success');
+                await loadRepo(state.currentRepo);
+                setTimeout(() => openFile(path, result.content.sha), 300);
+            } catch (err) {
+                toast('Create failed: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // COMMAND PALETTE (Ctrl+P)
+        // ============================================================
+        function openCommandPalette() {
+            cmdPalette.classList.add('open');
+            cmdOverlay.classList.add('open');
+            cmdInput.value = '';
+            cmdResults.innerHTML = '';
+            cmdInput.focus();
+            updateCmdResults('');
+        }
+
+        function closeCommandPalette() {
+            cmdPalette.classList.remove('open');
+            cmdOverlay.classList.remove('open');
+        }
+
+        function updateCmdResults(query) {
+            const actions = [
+                { name: 'New File', action: () => newFile(), hint: 'Create a new file' },
+                { name: 'Save', action: () => saveFile(), hint: 'Save current file' },
+                { name: 'Format', action: () => formatCode(), hint: 'Format code with Prettier' },
+                { name: 'Export ZIP', action: () => exportZip(), hint: 'Download repo as ZIP' },
+                { name: 'Build APK', action: () => buildApk(), hint: 'Trigger GitHub Actions build' },
+                { name: 'Toggle Preview', action: () => togglePreviewVisibility(), hint: 'Show/hide live preview' },
+                { name: 'Toggle Terminal', action: () => toggleTerminalVisibility(), hint: 'Show/hide terminal' },
+                { name: 'Toggle AI', action: () => toggleAiSidebar(), hint: 'Show/hide AI assistant' },
+                { name: 'Refresh', action: () => loadRepo(state.currentRepo), hint: 'Refresh file tree' },
+                { name: 'Delete File', action: () => deleteFile(), hint: 'Delete current file' },
+                { name: 'Close Tab', action: () => { if (state.activeTabId) closeTab(state.activeTabId); },
+                hint: 'Close current tab' },
+            ];
+            const filtered = actions.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
+            cmdResults.innerHTML = filtered.map((a, i) =>
+                `<div class="item" data-idx="${i}"><span>${a.name}</span><span class="hint">${a.hint}</span></div>`
+            ).join('');
+            const items = cmdResults.querySelectorAll('.item');
+            items.forEach(el => {
+                el.addEventListener('click', () => {
+                    const idx = parseInt(el.dataset.idx);
+                    const action = filtered[idx];
+                    if (action) { closeCommandPalette();
+                        action.action(); }
+                });
+            });
+            if (items.length > 0) items[0].classList.add('selected');
+        }
+
+        // ============================================================
+        // MONACO INIT
+        // ============================================================
+        function initMonaco() {
+            state.editor = monaco.editor.create(document.getElementById('monaco-container'), {
+                value: '// Login and open a file to start editing',
+                language: 'plaintext',
+                theme: window.matchMedia('(prefers-color-scheme: light)').matches ? 'vs' : 'vs-dark',
+                automaticLayout: true,
+                fontSize: 14,
+                fontFamily: '"JetBrains Mono", "Fira Code", monospace',
+                minimap: { enabled: true },
+                scrollbar: { vertical: 'auto', horizontal: 'auto' },
+                lineNumbers: 'on',
+                renderWhitespace: 'selection',
+                bracketPairColorization: { enabled: true },
+                wordWrap: 'on',
+                tabSize: 2,
+                insertSpaces: true,
+            });
+            // Save shortcut
+            state.editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => saveFile());
+            // Command Palette
+            state.editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyP, () => openCommandPalette());
+        }
+
+        // ============================================================
+        // THEME TOGGLE
+        // ============================================================
+        function toggleTheme() {
+            const root = document.documentElement;
+            const isLight = root.style.getPropertyValue('--bg-primary') === '#ffffff';
+            if (isLight) {
+                root.style.setProperty('--bg-primary', '#0d1117');
+                root.style.setProperty('--bg-secondary', '#161b22');
+                root.style.setProperty('--bg-tertiary', '#1c2333');
+                root.style.setProperty('--bg-hover', '#252d3f');
+                root.style.setProperty('--bg-active', '#2d374b');
+                root.style.setProperty('--border-color', '#30363d');
+                root.style.setProperty('--text-primary', '#c9d1d9');
+                root.style.setProperty('--text-secondary', '#8b949e');
+                root.style.setProperty('--text-muted', '#484f58');
+                root.style.setProperty('--shadow', '0 8px 32px rgba(0,0,0,0.6)');
+                if (state.editor) monaco.editor.setTheme('vs-dark');
+            } else {
+                root.style.setProperty('--bg-primary', '#ffffff');
+                root.style.setProperty('--bg-secondary', '#f6f8fa');
+                root.style.setProperty('--bg-tertiary', '#eaeef2');
+                root.style.setProperty('--bg-hover', '#d0d7de');
+                root.style.setProperty('--bg-active', '#bcc3cd');
+                root.style.setProperty('--border-color', '#d0d7de');
+                root.style.setProperty('--text-primary', '#24292f');
+                root.style.setProperty('--text-secondary', '#57606a');
+                root.style.setProperty('--text-muted', '#8b949e');
+                root.style.setProperty('--shadow', '0 8px 32px rgba(0,0,0,0.12)');
+                if (state.editor) monaco.editor.setTheme('vs');
+            }
+        }
+
+        // ============================================================
+        // DRAG & DROP
+        // ============================================================
+        document.addEventListener('dragover', e => e.preventDefault());
+        document.addEventListener('drop', e => e.preventDefault());
+        document.addEventListener('drop', async (e) => {
+            e.preventDefault();
+            const files = e.dataTransfer.files;
+            if (!files.length || !state.currentRepo) { toast('Login and select repo first', 'error'); return; }
+            for (const file of files) {
+                const path = file.name;
+                const content = await file.text();
+                const [owner, repo] = state.currentRepo.split('/');
+                try {
+                    const body = {
+                        message: `Upload ${path}`,
+                        content: btoa(unescape(encodeURIComponent(content))),
+                        branch: state.currentBranch,
+                    };
+                    await ghPut(
+                        `https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+                        body
+                    );
+                    toast(`Uploaded ${path} 📤`, 'success');
+                } catch (err) {
+                    toast(`Upload ${path} failed: ${err.message}`, 'error');
+                }
+            }
+            await loadRepo(state.currentRepo);
+        });
+
+        // ============================================================
+        // BRANCH SWITCH
+        // ============================================================
+        branchSelect.addEventListener('change', async () => {
+            const branch = branchSelect.value;
+            if (!branch) return;
+            state.currentBranch = branch;
+            await loadRepo(state.currentRepo);
+        });
+
+        // ============================================================
+        // EVENT BINDINGS
+        // ============================================================
+        loginBtn.addEventListener('click', login);
+        tokenInput.addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+        repoSelect.addEventListener('change', async () => {
+            if (repoSelect.value) await loadRepo(repoSelect.value);
+        });
+        refreshBtn.addEventListener('click', async () => { if (state.currentRepo) await loadRepo(state.currentRepo); });
+        newFileBtn.addEventListener('click', newFile);
+        saveBtn.addEventListener('click', saveFile);
+        deleteBtn.addEventListener('click', deleteFile);
+        formatBtn.addEventListener('click', formatCode);
+        exportZipBtn.addEventListener('click', exportZip);
+        buildApkBtn.addEventListener('click', buildApk);
+        toggleTerminal.addEventListener('click', toggleTerminalVisibility);
+        togglePreview.addEventListener('click', togglePreviewVisibility);
+        aiToggle.addEventListener('click', toggleAiSidebar);
+        closeAi.addEventListener('click', toggleAiSidebar);
+        closeTerminal.addEventListener('click', toggleTerminalVisibility);
+        closePreview.addEventListener('click', togglePreviewVisibility);
+        themeToggle.addEventListener('click', toggleTheme);
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            toggleSidebar.textContent = sidebar.classList.contains('collapsed') ? '❯' : '❮';
+            setTimeout(() => { if (state.editor) state.editor.layout(); }, 200);
+        });
+
+        // AI
+        aiSend.addEventListener('click', sendAIMessage);
+        aiInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendAIMessage(); });
+        saveAiKey.addEventListener('click', () => {
+            state.aiKey = aiKeyInput.value.trim();
+            state.aiProvider = aiProvider.value;
+            localStorage.setItem('ai_key', state.aiKey);
+            localStorage.setItem('ai_provider', state.aiProvider);
+            toast('AI key saved 🔑', 'success');
+            if (!state.aiKey) return;
+            addAIMessage('✅ AI key saved! You can now ask me anything.', 'assistant');
+        });
+
+        // Command Palette
+        cmdOverlay.addEventListener('click', closeCommandPalette);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCommandPalette();
+        });
+        cmdInput.addEventListener('input', (e) => updateCmdResults(e.target.value));
+        cmdInput.addEventListener('keydown', (e) => {
+            const items = cmdResults.querySelectorAll('.item');
+            if (e.key === 'Enter' && items.length > 0) {
+                items[0].click();
+            }
+            if (e.key === 'ArrowDown' && items.length > 0) {
+                e.preventDefault();
+                let sel = cmdResults.querySelector('.selected');
+                if (sel) { sel.classList.remove('selected');
+                    sel = sel.nextElementSibling || items[0]; } else sel = items[0];
+                sel.classList.add('selected');
+            }
+            if (e.key === 'ArrowUp' && items.length > 0) {
+                e.preventDefault();
+                let sel = cmdResults.querySelector('.selected');
+                if (sel) { sel.classList.remove('selected');
+                    sel = sel.previousElementSibling || items[items.length - 1]; } else sel = items[items.length - 1];
+                sel.classList.add('selected');
+            }
+        });
+
+        // Explain & Fix
+        explainBtn.addEventListener('click', async () => {
+            if (!state.activeTabId) return;
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab) return;
+            const code = state.editor ? state.editor.getValue() : tab.content;
+            const prompt =
+                `Explain this code in simple terms. File: ${tab.path}\n\n\`\`\`\n${code}\n\`\`\``;
+            if (!state.aiKey) { toast('Set AI key first', 'error'); return; }
+            toggleAiSidebar();
+            addAIMessage(`📖 Explaining ${tab.path}...`, 'user');
+            const resp = await callAI(prompt);
+            if (resp) addAIMessage(resp, 'assistant');
+        });
+
+        fixBtn.addEventListener('click', async () => {
+            if (!state.activeTabId) return;
+            const tab = state.tabs.find(t => t.id === state.activeTabId);
+            if (!tab) return;
+            const code = state.editor ? state.editor.getValue() : tab.content;
+            const prompt =
+                `Fix any bugs or issues in this code. Return only the fixed code in a code block. File: ${tab.path}\n\n\`\`\`\n${code}\n\`\`\``;
+            if (!state.aiKey) { toast('Set AI key first', 'error'); return; }
+            toggleAiSidebar();
+            addAIMessage(`🔧 Fixing ${tab.path}...`, 'user');
+            const resp = await callAI(prompt);
+            if (resp) {
+                addAIMessage(resp, 'assistant');
+                // Try to extract code from response and update editor
+                const codeMatch = resp.match(/```[\s\S]*?```/);
+                if (codeMatch) {
+                    const newCode = codeMatch[0].replace(/```\w*\n?/g, '').replace(/```$/, '');
+                    if (state.editor) {
+                        state.editor.setValue(newCode);
+                        tab.content = newCode;
+                        tab.dirty = true;
+                        renderTabs();
+                        toast('Code fixed! Review and save.', 'success');
+                    }
+                }
+            }
+        });
+
+        // ============================================================
+        // AUTO-LOGIN & INIT
+        // ============================================================
+        if (state.token) {
+            tokenInput.value = state.token;
+            login();
+        }
+
+        initMonaco();
+        if (state.aiKey) { aiKeyInput.value = state.aiKey;
+            aiProvider.value = state.aiProvider; }
+
+        // Preview update on save
+        const origSave = saveFile;
+        saveFile = async function() {
+            await origSave.call(this);
+            updatePreview();
+        };
+
+        console.log('🚀 Ultimate GitHub IDE loaded!');
+        console.log('📖 Features: Multi-tab | AI | Preview | Terminal | ZIP | Format | Drag&Drop | Command Palette');
+        console.log('💡 Press Ctrl+P for Command Palette');
+
+        // ============================================================
+        // EXPLAIN & FIX BUTTONS FIX (re-bind after override)
+        // ============================================================
+        // Already bound above
+
+        console.log('✅ All systems ready!');
+    </script>
+</body>
+</html>
